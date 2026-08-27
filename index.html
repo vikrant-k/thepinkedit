@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pink Edit - Hand Block-Printed Textiles from Jaipur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant:wght@300;400;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dusty-pink: #D4A5A5;
+            --terracotta: #C85A3A;
+            --charcoal: #3A3A3A;
+            --cream: #F5F0EB;
+            --gold: #D4AF37;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Cormorant', serif;
+            color: var(--charcoal);
+            background-color: var(--cream);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--cream);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dusty-pink);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--dusty-pink);
+        }
+
+        /* Page wrapper */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 60px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(212, 165, 165, 0.1) 0%, rgba(245, 240, 235, 0.5) 100%);
+            padding: 100px 40px;
+            text-align: center;
+            min-height: calc(100vh - 60px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arch-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+            color: var(--dusty-pink);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            color: var(--dusty-pink);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero .tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--terracotta);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-family: 'Cormorant', serif;
+            font-size: 18px;
+            color: var(--charcoal);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            background-color: var(--dusty-pink);
+            color: white;
+            padding: 15px 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--terracotta);
+            transform: translateY(-2px);
+        }
+
+        /* Brand Story Section */
+        .story-section {
+            padding: 80px 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .story-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            color: var(--dusty-pink);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .story-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .story-section em {
+            color: var(--terracotta);
+            font-style: italic;
+        }
+
+        /* Values Section */
+        .values {
+            background-color: rgba(212, 165, 165, 0.05);
+            padding: 60px 40px;
+            margin: 40px 0;
+        }
+
+        .values h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--charcoal);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .value-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--dusty-pink);
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            font-size: 16px;
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        /* Product Catalogue */
+        .catalogue {
+            padding: 80px 40px;
+        }
+
+        .catalogue-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .catalogue-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--dusty-pink);
+            margin-bottom: 20px;
+        }
+
+        .catalogue-header p {
+            font-size: 18px;
+            color: var(--charcoal);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 2px solid var(--dusty-pink);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 165, 165, 0.2);
+        }
+
+        .product-image {
+            background: linear-gradient(135deg, var(--dusty-pink) 0%, var(--terracotta) 100%);
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .product-content {
+            padding: 30px;
+        }
+
+        .product-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--dusty-pink);
+            margin-bottom: 15px;
+        }
+
+        .product-content p {
+            font-size: 16px;
+            color: var(--charcoal);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .product-specs {
+            background-color: rgba(245, 240, 235, 0.5);
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid var(--dusty-pink);
+        }
+
+        .product-specs p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--terracotta);
+            margin-top: 15px;
+        }
+
+        .product-cta {
+            background-color: var(--dusty-pink);
+            color: white;
+            padding: 12px 24px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-cta:hover {
+            background-color: var(--terracotta);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin: 10px 0;
+        }
+
+        .footer-tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            margin: 20px 0;
+            color: var(--dusty-pink);
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--dusty-pink);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            line-height: 40px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--terracotta);
+        }
+
+        /* Divider */
+        .divider {
+            max-width: 300px;
+            height: 2px;
+            background-color: var(--dusty-pink);
+            margin: 30px auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero .tagline {
+                font-size: 22px;
+            }
+
+            .story-section,
+            .catalogue {
+                padding: 40px 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero p,
+            .story-section p {
+                font-size: 16px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page.active {
+            animation: fadeIn 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="height: 40px; width: auto;">
+                <!-- Outer petals -->
+                <g fill="#D4A5A5" opacity="0.8">
+                    <ellipse cx="100" cy="60" rx="20" ry="35" transform="rotate(0 100 100)"/>
+                    <ellipse cx="100" cy="60" rx="20" ry="35" transform="rotate(45 100 100)"/>
+                    <ellipse cx="100" cy="60" rx="20" ry="35" transform="rotate(90 100 100)"/>
+                    <ellipse cx="100" cy="60" rx="20" ry="35" transform="rotate(135 100 100)"/>
+                    <ellipse cx="100" cy="60" rx="20" ry="35" transform="rotate(180 100 100)"/>
+                    <ellipse cx="100" cy="60" rx="20" ry="35" transform="rotate(225 100 100)"/>
+                    <ellipse cx="100" cy="60" rx="20" ry="35" transform="rotate(270 100 100)"/>
+                    <ellipse cx="100" cy="60" rx="20" ry="35" transform="rotate(315 100 100)"/>
+                </g>
+                <!-- Inner petals -->
+                <g fill="#C85A3A" opacity="0.9">
+                    <ellipse cx="100" cy="70" rx="16" ry="30" transform="rotate(22.5 100 100)"/>
+                    <ellipse cx="100" cy="70" rx="16" ry="30" transform="rotate(67.5 100 100)"/>
+                    <ellipse cx="100" cy="70" rx="16" ry="30" transform="rotate(112.5 100 100)"/>
+                    <ellipse cx="100" cy="70" rx="16" ry="30" transform="rotate(157.5 100 100)"/>
+                    <ellipse cx="100" cy="70" rx="16" ry="30" transform="rotate(202.5 100 100)"/>
+                    <ellipse cx="100" cy="70" rx="16" ry="30" transform="rotate(247.5 100 100)"/>
+                    <ellipse cx="100" cy="70" rx="16" ry="30" transform="rotate(292.5 100 100)"/>
+                    <ellipse cx="100" cy="70" rx="16" ry="30" transform="rotate(337.5 100 100)"/>
+                </g>
+                <!-- Center -->
+                <circle cx="100" cy="100" r="18" fill="#D4AF37"/>
+                <circle cx="100" cy="100" r="12" fill="#C85A3A" opacity="0.7"/>
+            </svg>
+        </div>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="showPage('home')" class="nav-link active" data-page="home">Home</a></li>
+            <li><a href="javascript:void(0)" onclick="showPage('catalogue')" class="nav-link" data-page="catalogue">Collection</a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE 1: LANDING -->
+    <div class="page active" id="home">
+        <!-- Hero Image Strip (Placeholder) -->
+        <section class="hero-image-strip" style="width: 100%; height: 400px; background: linear-gradient(135deg, #E8D5D5 0%, #D4A5A5 50%, #C85A3A 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+            <div style="text-align: center; z-index: 10;">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 20px;">
+                    <rect x="10" y="10" width="60" height="60" stroke="#F5F0EB" stroke-width="2" fill="none"/>
+                    <circle cx="40" cy="30" r="8" fill="#F5F0EB"/>
+                    <path d="M15 55 L40 40 L55 50 L65 35" stroke="#F5F0EB" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3 style="color: #F5F0EB; font-family: 'Montserrat', sans-serif; font-size: 1.2em; margin-bottom: 10px; letter-spacing: 1px;">HERO IMAGE PLACEHOLDER</h3>
+                <p style="color: #F5F0EB; font-family: 'Montserrat', sans-serif; font-size: 0.95em; opacity: 0.95;">Replace with your hero image (recommended: 1200px × 400px)</p>
+            </div>
+        </section>
+
+        <!-- Original Hero Section -->
+        <section class="hero" style="background: url('The_Pink_Edit_Hero_Background.svg') center/cover no-repeat; background-size: cover; min-height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
+            <h1>THE PINK EDIT</h1>
+            <div class="tagline">Hand block-printed. Honestly sourced. Made for real living.</div>
+            <p>Every piece in our collection is thoughtfully selected from artisans in Jaipur, Rajasthan. 100% cotton textiles that improve with time—not trends.</p>
+            <button class="cta-button" onclick="showPage('catalogue')">Explore Our Collection</button>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Brand Story -->
+        <section class="story-section">
+            <h2>Our Story</h2>
+            <p>The Pink Edit brings hand block-printed cotton textiles from Jaipur, Rajasthan to Canadian homes. We partner directly with master artisans who have been printing fabrics for generations. Instead of mass production, we import carefully curated collections of the finest hand block-printed textiles.</p>
+            <p>Every bedsheet, duvet, towel, and robe in your home is printed by hand using traditional techniques. That's why each piece is unique. That's why they're made to last.</p>
+            <p><em>"We don't believe in more. We believe in better."</em></p>
+            <p>Our commitment is simple: 100% cotton (no synthetic blends), hand block printed (not digitally printed), fair partnership with artisans, transparent sourcing, and products designed for quality and longevity.</p>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values">
+            <h3>What We Stand For</h3>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h4>Authentic Craftsmanship</h4>
+                    <p>Hand block printed, not digitally printed. Each piece is created by skilled artisans using traditional techniques.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Premium Quality</h4>
+                    <p>100% cotton, carefully sourced. Products that last 10+ years with proper care, improving with every wash.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Thoughtful Curation</h4>
+                    <p>Smaller quantities, higher standards. We choose quality over quantity for everything we offer.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Direct Partnership</h4>
+                    <p>We work directly with artisan cooperatives in Jaipur, ensuring fair compensation and transparency.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Slow Living</h4>
+                    <p>Textiles designed for intentional, unhurried living. Pieces that encourage you to slow down and appreciate.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Transparency</h4>
+                    <p>You know exactly where your products come from. We believe honesty builds the best relationships.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-tagline">Hand block-printed. Honestly sourced. Made for real living.</div>
+                <p>© 2026 The Pink Edit | Importing premium textiles from Jaipur to Canada</p>
+                <div class="social-links">
+                    <a href="#" title="Instagram">f</a>
+                    <a href="#" title="Instagram">@</a>
+                    <a href="#" title="Email">✉</a>
+                </div>
+                <p style="margin-top: 20px; font-size: 12px;">Available on Etsy • Amazon • Shopify</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- PAGE 2: PRODUCT CATALOGUE -->
+    <div class="page" id="catalogue">
+        <!-- Catalogue Header -->
+        <section class="catalogue-header" style="margin-top: 60px;">
+            <h1>Our Collection</h1>
+            <p>Hand block-printed 100% cotton textiles crafted by artisans in Jaipur. Each piece is unique and designed to last.</p>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products-grid">
+            <!-- Product 1: Bedsheets -->
+            <div class="product-card">
+                <div class="product-image">🛏️</div>
+                <div class="product-content">
+                    <h3>Bedsheets</h3>
+                    <p>Hand block-printed cotton bedsheets that transform your bedroom into a retreat. Each set is printed individually, making every one unique.</p>
+                    <div class="product-specs">
+                        <p><strong>Material:</strong> 100% cotton</p>
+                        <p><strong>Printing:</strong> Hand block-printed</p>
+                        <p><strong>Sizes:</strong> Twin, Full/Queen, King</p>
+                        <p><strong>Care:</strong> Machine wash warm, tumble dry low</p>
+                    </div>
+                    <p>"This isn't mass-produced. Each sheet is printed by hand in Jaipur. That's why every set is slightly different—and why that matters."</p>
+                    <div class="price">$85 - $145</div>
+                    <button class="product-cta" onclick="alert('Coming soon on Etsy, Amazon, and Shopify!')">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Product 2: Dohar -->
+            <div class="product-card">
+                <div class="product-image">🧵</div>
+                <div class="product-content">
+                    <h3>Dohar</h3>
+                    <p>Hand block-printed cotton dohars perfect for layering year-round. Light, breathable, and beautifully crafted for comfortable living.</p>
+                    <div class="product-specs">
+                        <p><strong>Material:</strong> 100% cotton</p>
+                        <p><strong>Printing:</strong> Hand block-printed</p>
+                        <p><strong>Sizes:</strong> Single, Double, Queen</p>
+                        <p><strong>Weight:</strong> Lightweight, breathable</p>
+                    </div>
+                    <p>"A dohar is comfort redefined. Perfect for warm nights and leisurely mornings."</p>
+                    <div class="price">$95 - $180</div>
+                    <button class="product-cta" onclick="alert('Coming soon on Etsy, Amazon, and Shopify!')">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Product 3: Towels -->
+            <div class="product-card">
+                <div class="product-image">🛁</div>
+                <div class="product-content">
+                    <h3>Towels</h3>
+                    <p>Soft, absorbent hand block-printed cotton towels that bring artisan beauty to daily routines. Bath, hand, and washcloth options available.</p>
+                    <div class="product-specs">
+                        <p><strong>Material:</strong> 100% cotton</p>
+                        <p><strong>Weight:</strong> 500 GSM</p>
+                        <p><strong>Types:</strong> Bath, Hand, Washcloth</p>
+                        <p><strong>Care:</strong> Separate wash for first 2 washes</p>
+                    </div>
+                    <p>"Towels don't have to be boring. These hand-printed towels add beauty to your morning ritual."</p>
+                    <div class="price">$25 - $45</div>
+                    <button class="product-cta" onclick="alert('Coming soon on Etsy, Amazon, and Shopify!')">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Product 4: Bath Robes -->
+            <div class="product-card">
+                <div class="product-image">👘</div>
+                <div class="product-content">
+                    <h3>Bath Robes</h3>
+                    <p>Lightweight hand block-printed cotton robes perfect for warm mornings and year-round comfort. Slip-on style in universal size.</p>
+                    <div class="product-specs">
+                        <p><strong>Material:</strong> Lightweight 100% cotton</p>
+                        <p><strong>Printing:</strong> Hand block-printed</p>
+                        <p><strong>Sizing:</strong> One size (adjustable tie)</p>
+                        <p><strong>Care:</strong> Lay flat to dry</p>
+                    </div>
+                    <p>"Your robe is one of the first things you wear. Make it beautiful. Make it meaningful."</p>
+                    <div class="price">$65 - $100</div>
+                    <button class="product-cta" onclick="alert('Coming soon on Etsy, Amazon, and Shopify!')">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Product 5: Pouches -->
+            <div class="product-card">
+                <div class="product-image">🎁</div>
+                <div class="product-content">
+                    <h3>Pouches</h3>
+                    <p>Small hand block-printed cotton pouches perfect for organizing and gifting. Ideal for jewelry, travel, or meaningful gifts.</p>
+                    <div class="product-specs">
+                        <p><strong>Material:</strong> 100% cotton</p>
+                        <p><strong>Printing:</strong> Hand block-printed</p>
+                        <p><strong>Sizes:</strong> Small, Medium, Large</p>
+                        <p><strong>Closure:</strong> Drawstring or zipper</p>
+                    </div>
+                    <p>"Small details matter. This pouch holds more than just objects—it carries artisan stories."</p>
+                    <div class="price">$15 - $30</div>
+                    <button class="product-cta" onclick="alert('Coming soon on Etsy, Amazon, and Shopify!')">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Product 6: Totebags -->
+            <div class="product-card">
+                <div class="product-image">👜</div>
+                <div class="product-content">
+                    <h3>Totebags</h3>
+                    <p>Hand block-printed cotton totebags perfect for everyday carry. Spacious, durable, and beautifully designed for the conscious shopper.</p>
+                    <div class="product-specs">
+                        <p><strong>Material:</strong> 100% cotton canvas</p>
+                        <p><strong>Printing:</strong> Hand block-printed</p>
+                        <p><strong>Size:</strong> Spacious tote capacity</p>
+                        <p><strong>Features:</strong> Strong handles, lined interior</p>
+                    </div>
+                    <p>"A beautiful bag tells a story. Carry yours with pride."</p>
+                    <div class="price">$35 - $55</div>
+                    <button class="product-cta" onclick="alert('Coming soon on Etsy, Amazon, and Shopify!')">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Product 7: Placemats -->
+            <div class="product-card">
+                <div class="product-image">🍽️</div>
+                <div class="product-content">
+                    <h3>Placemats</h3>
+                    <p>Hand block-printed cotton placemats that bring artisan beauty to your dining table. Functional art for everyday meals.</p>
+                    <div class="product-specs">
+                        <p><strong>Material:</strong> 100% cotton</p>
+                        <p><strong>Printing:</strong> Hand block-printed</p>
+                        <p><strong>Set:</strong> Set of 4, 6, or individual</p>
+                        <p><strong>Care:</strong> Machine washable</p>
+                    </div>
+                    <p>"Your table deserves the same beauty as your bedroom."</p>
+                    <div class="price">$45 - $75</div>
+                    <button class="product-cta" onclick="alert('Coming soon on Etsy, Amazon, and Shopify!')">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Product 8: Kid's Bathrobe -->
+            <div class="product-card">
+                <div class="product-image">👶</div>
+                <div class="product-content">
+                    <h3>Kid's Bathrobe</h3>
+                    <p>Soft hand block-printed cotton robes for children. Cozy, comfortable, and designed for little ones to enjoy artisan beauty.</p>
+                    <div class="product-specs">
+                        <p><strong>Material:</strong> 100% cotton, lightweight</p>
+                        <p><strong>Printing:</strong> Hand block-printed</p>
+                        <p><strong>Sizes:</strong> Age 2-4, 4-6, 6-8</p>
+                        <p><strong>Features:</strong> Adjustable tie, fun patterns</p>
+                    </div>
+                    <p>"Introduce little ones to the joy of handcrafted textiles."</p>
+                    <div class="price">$40 - $60</div>
+                    <button class="product-cta" onclick="alert('Coming soon on Etsy, Amazon, and Shopify!')">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Product 9: Kid's Towel -->
+            <div class="product-card">
+                <div class="product-image">🏖️</div>
+                <div class="product-content">
+                    <h3>Kid's Towel</h3>
+                    <p>Adorable hand block-printed cotton towels sized for children. Soft, playful, and perfect for bath time and pool days.</p>
+                    <div class="product-specs">
+                        <p><strong>Material:</strong> 100% cotton, soft terry</p>
+                        <p><strong>Printing:</strong> Hand block-printed</p>
+                        <p><strong>Size:</strong> Child-friendly dimensions</p>
+                        <p><strong>Colors:</strong> Fun patterns for kids</p>
+                    </div>
+                    <p>"Make bath time special with beautiful, artisan-crafted towels."</p>
+                    <div class="price">$20 - $35</div>
+                    <button class="product-cta" onclick="alert('Coming soon on Etsy, Amazon, and Shopify!')">Learn More</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Why Choose Us Section -->
+        <section class="story-section">
+            <h2>Why The Pink Edit?</h2>
+            <p><strong>Direct Artisan Partnership:</strong> We work directly with a cooperative of master block printers in Jaipur, ensuring fair compensation and transparent sourcing.</p>
+            <p><strong>100% Cotton Quality:</strong> No synthetic blends. Every piece is pure cotton, chosen for its quality and longevity.</p>
+            <p><strong>Hand Block Printed:</strong> Not digitally printed. Each pattern is created by hand using traditional Jaipuri techniques passed down through generations.</p>
+            <p><strong>Unique Pieces:</strong> Because they're hand-printed, no two pieces are identical. Variations and imperfections are proof of authenticity.</p>
+            <p><strong>Investment Pieces:</strong> With proper care, these textiles last 10+ years. Designed for quality over trends, sustainability over fast fashion.</p>
+            <p><strong>Complete Story:</strong> Every purchase includes the artisan's name and biography. You know exactly who created your textiles.</p>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="hero" style="background: linear-gradient(135deg, var(--dusty-pink) 0%, var(--terracotta) 100%); color: white; margin-top: 40px;">
+            <h2 style="color: white; font-size: 40px; margin-bottom: 20px;">Ready to Transform Your Home?</h2>
+            <p style="color: white; max-width: 600px; margin-bottom: 30px;">Join customers across Canada who are bringing authentic Jaipuri craftsmanship into their homes. Start with one piece or create your complete collection.</p>
+            <p style="color: white; margin-bottom: 20px; font-size: 16px;"><strong>Available on:</strong></p>
+            <button class="cta-button" onclick="alert('https://www.etsy.com/shop/thepinkedit (Coming Soon)')">Shop on Etsy</button>
+            <button class="cta-button" onclick="alert('https://www.amazon.ca/thepinkedit (Coming Soon)')">Shop on Amazon</button>
+            <button class="cta-button" onclick="alert('Interested in our collection? Contact us at hello@thepinkedit.com')">Contact Us</button>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-tagline">Hand block-printed. Honestly sourced. Made for real living.</div>
+                <p>© 2026 The Pink Edit | Importing premium textiles from Jaipur, Rajasthan to Canada</p>
+                <div class="social-links">
+                    <a href="#" title="Instagram">f</a>
+                    <a href="#" title="Instagram">@</a>
+                    <a href="#" title="Email">✉</a>
+                </div>
+                <p style="margin-top: 20px; font-size: 12px;">Follow us on Instagram @thepinkedit | Email: hello@thepinkedit.com</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+
+            // Update nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Initialize
+        showPage('home');
+    </script>
+</body>
+</html>

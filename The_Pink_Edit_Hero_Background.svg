@@ -1,0 +1,107 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F0EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FAF7F3;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A5A5;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#C85A3A;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#heroGradient)"/>
+
+  <!-- Decorative top corner pattern -->
+  <g opacity="0.3">
+    <path d="M 0,0 Q 150,80 200,0 L 200,100 Q 150,50 0,100 Z" fill="#D4A5A5"/>
+    <circle cx="80" cy="40" r="25" fill="#C85A3A" opacity="0.5"/>
+    <circle cx="150" cy="60" r="20" fill="#D4AF37" opacity="0.6"/>
+  </g>
+
+  <!-- Decorative bottom right corner -->
+  <g opacity="0.25">
+    <path d="M 1200,800 Q 1050,720 1000,800 L 1000,700 Q 1050,750 1200,700 Z" fill="#C85A3A"/>
+    <circle cx="1100" cy="750" r="30" fill="#D4A5A5" opacity="0.6"/>
+    <circle cx="1050" cy="720" r="22" fill="#D4AF37" opacity="0.5"/>
+  </g>
+
+  <!-- Left decorative elements -->
+  <g opacity="0.4">
+    <!-- Vertical ornamental line -->
+    <line x1="80" y1="150" x2="80" y2="650" stroke="#D4A5A5" stroke-width="2" stroke-dasharray="10,10"/>
+    
+    <!-- Decorative dots -->
+    <circle cx="80" cy="200" r="6" fill="#C85A3A"/>
+    <circle cx="80" cy="300" r="5" fill="#D4AF37"/>
+    <circle cx="80" cy="400" r="6" fill="#D4A5A5"/>
+    <circle cx="80" cy="500" r="5" fill="#C85A3A"/>
+    <circle cx="80" cy="600" r="6" fill="#D4AF37"/>
+  </g>
+
+  <!-- Right decorative elements -->
+  <g opacity="0.4">
+    <!-- Vertical ornamental line -->
+    <line x1="1120" y1="150" x2="1120" y2="650" stroke="#C85A3A" stroke-width="2" stroke-dasharray="10,10"/>
+    
+    <!-- Decorative dots -->
+    <circle cx="1120" cy="200" r="6" fill="#D4A5A5"/>
+    <circle cx="1120" cy="300" r="5" fill="#C85A3A"/>
+    <circle cx="1120" cy="400" r="6" fill="#D4AF37"/>
+    <circle cx="1120" cy="500" r="5" fill="#D4A5A5"/>
+    <circle cx="1120" cy="600" r="6" fill="#C85A3A"/>
+  </g>
+
+  <!-- Center content area with subtle pattern -->
+  <rect x="200" y="150" width="800" height="500" fill="url(#accentGradient)" opacity="0.5"/>
+
+  <!-- Decorative geometric shapes - top center -->
+  <g opacity="0.3">
+    <polygon points="600,180 650,220 600,260 550,220" fill="#D4A5A5"/>
+    <polygon points="600,180 640,210 600,240 560,210" fill="#C85A3A" opacity="0.6"/>
+  </g>
+
+  <!-- Decorative textile-inspired motif - center -->
+  <g opacity="0.25">
+    <!-- Small damask-like element -->
+    <ellipse cx="300" cy="280" rx="50" ry="60" fill="#D4A5A5" opacity="0.4"/>
+    <ellipse cx="300" cy="280" rx="35" ry="45" fill="none" stroke="#C85A3A" stroke-width="2" opacity="0.5"/>
+    
+    <ellipse cx="900" cy="500" rx="60" ry="50" fill="#C85A3A" opacity="0.3"/>
+    <ellipse cx="900" cy="500" rx="40" ry="35" fill="none" stroke="#D4A5A5" stroke-width="2" opacity="0.4"/>
+  </g>
+
+  <!-- Decorative corner flourishes -->
+  <g opacity="0.35">
+    <!-- Top left flourish -->
+    <path d="M 200,150 Q 250,160 280,180" stroke="#D4A5A5" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="200" cy="150" r="4" fill="#C85A3A"/>
+    <circle cx="280" cy="180" r="4" fill="#D4AF37"/>
+    
+    <!-- Top right flourish -->
+    <path d="M 1000,150 Q 950,160 920,180" stroke="#C85A3A" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="1000" cy="150" r="4" fill="#D4A5A5"/>
+    <circle cx="920" cy="180" r="4" fill="#D4AF37"/>
+    
+    <!-- Bottom left flourish -->
+    <path d="M 200,650 Q 250,640 280,620" stroke="#D4AF37" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="200" cy="650" r="4" fill="#C85A3A"/>
+    
+    <!-- Bottom right flourish -->
+    <path d="M 1000,650 Q 950,640 920,620" stroke="#D4A5A5" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="1000" cy="650" r="4" fill="#C85A3A"/>
+  </g>
+
+  <!-- Central focal point - subtle -->
+  <circle cx="600" cy="400" r="120" fill="none" stroke="#D4A5A5" stroke-width="2" opacity="0.2" stroke-dasharray="5,5"/>
+  <circle cx="600" cy="400" r="80" fill="none" stroke="#C85A3A" stroke-width="1.5" opacity="0.15"/>
+
+  <!-- Subtle horizontal accent line -->
+  <line x1="300" y1="400" x2="900" y2="400" stroke="#D4AF37" stroke-width="1" opacity="0.3"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="3" fill="#C85A3A" opacity="0.4"/>
+</svg>

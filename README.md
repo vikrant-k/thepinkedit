@@ -12,9 +12,10 @@ the-pink-edit/
 ├── favicon.ico                 # Lotus favicon (16/32/48)
 ├── assets/
 │   ├── css/styles.css          # All styles (tokens at the top)
-│   ├── js/main.js              # Page switching (Home / Collection)
+│   ├── js/main.js              # Page switching + hero slideshow
 │   └── images/
-│       ├── brand/              # Lotus mark, favicons, booti hero strip
+│       ├── brand/              # Lotus mark, favicons
+│       ├── hero/               # Hero animation (MP4/WebM) + poster
 │       └── products/           # Product photos (.webp + .jpg fallback)
 ├── .github/workflows/pages.yml # Auto-deploy to GitHub Pages
 ├── .nojekyll

@@ -17,3 +17,31 @@ function showPage(pageId) {
 
 // Initialize
 showPage('home');
+
+// Hero slideshow: show each image for 2 seconds, then loop
+(function () {
+    const show = document.querySelector('.hero-slideshow');
+    if (!show) return;
+    const slides = show.querySelectorAll('.hero-slide');
+    if (slides.length < 2) return;
+    const interval = Number(show.dataset.interval) || 2000;
+    let current = 0;
+    setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }, interval);
+})();
+
+// Offset pages by the real height of the fixed navigation bar,
+// so the hero animation starts just below it (nav is taller on mobile).
+(function () {
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+    const setNavHeight = () => {
+        document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
+    };
+    setNavHeight();
+    window.addEventListener('resize', setNavHeight);
+    window.addEventListener('load', setNavHeight);
+})();

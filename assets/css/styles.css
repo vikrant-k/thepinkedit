@@ -429,7 +429,7 @@ html {
     animation: fadeIn 0.5s ease;
 }
 
-/* ---------- Added: hero image strip (Booti print) ---------- */
+/* ---------- Added: hero image strip (rotating block prints) ---------- */
 .hero-image-strip {
     width: 100%;
     height: 400px;
@@ -437,8 +437,24 @@ html {
     background-color: var(--cream);
 }
 
-.hero-image-strip picture,
-.hero-image-strip img {
+.hero-slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-slide img {
     display: block;
     width: 100%;
     height: 100%;
@@ -480,4 +496,153 @@ html {
 a.cta-button {
     display: inline-block;
     text-decoration: none;
+}
+
+/* ---------- Added: Buy on Etsy / Buy on Amazon buttons ---------- */
+.product-cta-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.product-cta-group .product-cta {
+    flex: 1;
+    width: auto;
+    margin-top: 0;
+    padding: 12px 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* ---------- Added: new copy sections ---------- */
+.section-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--terracotta);
+    text-align: center !important;
+    margin-top: -10px;
+    margin-bottom: 30px !important;
+}
+
+.centered-section p {
+    text-align: center;
+}
+
+.text-link-wrap {
+    text-align: center !important;
+    margin-top: 30px;
+}
+
+.text-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--terracotta);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+}
+
+.text-link:hover {
+    color: var(--dusty-pink);
+}
+
+.text-link-light {
+    color: white;
+}
+
+.text-link-light:hover {
+    color: var(--cream);
+}
+
+.catalogue-header p + p {
+    margin-top: 15px;
+}
+
+.catalogue-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px !important;
+    color: var(--terracotta) !important;
+}
+
+.product-quote {
+    font-style: italic;
+    color: var(--terracotta) !important;
+}
+
+.values > .values-grid:first-child {
+    margin-top: 0;
+}
+
+.values-grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    max-width: 1100px;
+}
+
+/* ---------- Added: price + buy buttons pinned to card bottom ---------- */
+.product-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-footer {
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.product-footer .price {
+    margin-top: 0;
+}
+
+.price-tbc {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* ---------- Added: single hero image (replaces slideshow) ---------- */
+.hero-image-strip > picture,
+.hero-image-strip > picture img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ---------- Added: animated hero (video) ---------- */
+.hero-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ---------- Added: keep content clear of the fixed navigation bar ---------- */
+/* --nav-height is set from the real nav height in main.js (fallback 81px) */
+.page {
+    padding-top: var(--nav-height, 81px);
+}
+
+/* ---------- Added: show the full height of the hero animation ---------- */
+/* Strip follows the animation's own proportions (1536 × 546), so nothing is cropped */
+.hero-image-strip {
+    height: auto;
+    aspect-ratio: 1536 / 546;
+}
+
+@media (max-width: 768px) {
+    .hero-image-strip {
+        height: auto;
+    }
 }

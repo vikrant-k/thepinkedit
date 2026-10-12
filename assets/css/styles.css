@@ -646,3 +646,189 @@ a.cta-button {
         height: auto;
     }
 }
+
+/* ---------- Added: Get Notified (embedded Google Form) ---------- */
+.notify-form {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.notify-form iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+
+/* ---------- Added: Get Notified custom form ---------- */
+.tpe-form {
+    text-align: left;
+    background: var(--white);
+    border: 2px solid var(--dusty-pink);
+    padding: 36px;
+}
+
+.form-field {
+    margin-bottom: 26px;
+}
+
+.form-label {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--charcoal);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.required {
+    color: var(--terracotta);
+}
+
+.tpe-form input[type="text"],
+.tpe-form input[type="email"],
+.ms-toggle {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--charcoal);
+    background: var(--cream);
+    border: 1px solid var(--dusty-pink);
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tpe-form input:focus,
+.ms-toggle:focus-visible {
+    border-color: var(--terracotta);
+    box-shadow: 0 0 0 3px rgba(200, 90, 58, 0.15);
+}
+
+.tpe-form input.invalid {
+    border-color: var(--terracotta);
+}
+
+.form-error {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: var(--terracotta);
+    margin-top: 6px !important;
+    text-align: left !important;
+}
+
+/* Dropdown with checkboxes */
+.multi-select {
+    position: relative;
+}
+
+.ms-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+}
+
+.ms-summary {
+    color: #8a8a8a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ms-summary.has-value {
+    color: var(--charcoal);
+}
+
+.ms-caret {
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+
+.multi-select.open .ms-caret {
+    transform: rotate(180deg);
+}
+
+.ms-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 4px);
+    z-index: 20;
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    max-height: 300px;
+    overflow-y: auto;
+    background: var(--white);
+    border: 1px solid var(--dusty-pink);
+    box-shadow: 0 10px 30px rgba(58, 58, 58, 0.12);
+}
+
+.ms-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.ms-option:hover {
+    background: rgba(212, 165, 165, 0.12);
+}
+
+.ms-option input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--terracotta);
+    flex-shrink: 0;
+}
+
+.form-note {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px !important;
+    color: #8a8a8a;
+    text-align: left !important;
+}
+
+.form-submit {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.form-submit:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+.form-status {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px !important;
+    color: #4f7a52;
+    text-align: center !important;
+    margin-top: 16px !important;
+}
+
+.form-status.is-error {
+    color: var(--terracotta);
+}
+
+@media (max-width: 768px) {
+    .tpe-form {
+        padding: 24px 18px;
+    }
+}
+
+/* Keep the Get Notified heading clear of the fixed nav when scrolled to */
+#get-notified {
+    scroll-margin-top: calc(var(--nav-height, 81px) + 20px);
+}
+
+/* ---------- Added: placeholder image boxes match product photo height ---------- */
+.product-image:not(.has-photo) {
+    height: auto;
+    aspect-ratio: 1222 / 1287;
+}

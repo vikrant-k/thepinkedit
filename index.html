@@ -103,6 +103,56 @@
             </div>
         </section>
 
+        <!-- Get Notified -->
+        <section class="story-section centered-section notify-section" id="get-notified">
+            <h2>Get Notified</h2>
+            <div class="notify-form">
+                <form id="notify-form" class="tpe-form" novalidate>
+                    <!-- Q1: products (dropdown with checkboxes) -->
+                    <div class="form-field">
+                        <label class="form-label" id="products-label">Which all products are you interested in?</label>
+                        <div class="multi-select" id="product-select">
+                            <button type="button" class="ms-toggle" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="products-label">
+                                <span class="ms-summary">Select products</span>
+                                <span class="ms-caret" aria-hidden="true">▾</span>
+                            </button>
+                            <ul class="ms-panel" role="listbox" aria-multiselectable="true" hidden>
+                            <li><label class="ms-option"><input type="checkbox" name="products" value="Fitted Sheets"> <span>Fitted Sheets</span></label></li>
+                            <li><label class="ms-option"><input type="checkbox" name="products" value="Flat Sheets"> <span>Flat Sheets</span></label></li>
+                            <li><label class="ms-option"><input type="checkbox" name="products" value="Dohars — Lightweight Cotton Quilts"> <span>Dohars — Lightweight Cotton Quilts</span></label></li>
+                            <li><label class="ms-option"><input type="checkbox" name="products" value="Kids&#39; Dohars — Lightweight Cotton Quilts"> <span>Kids&#39; Dohars — Lightweight Cotton Quilts</span></label></li>
+                            <li><label class="ms-option"><input type="checkbox" name="products" value="Bath Towels"> <span>Bath Towels</span></label></li>
+                            <li><label class="ms-option"><input type="checkbox" name="products" value="Hand Towels"> <span>Hand Towels</span></label></li>
+                            <li><label class="ms-option"><input type="checkbox" name="products" value="Kids&#39; Towels"> <span>Kids&#39; Towels</span></label></li>
+                            <li><label class="ms-option"><input type="checkbox" name="products" value="Bathrobes"> <span>Bathrobes</span></label></li>
+                            <li><label class="ms-option"><input type="checkbox" name="products" value="Kids&#39; Bathrobes"> <span>Kids&#39; Bathrobes</span></label></li>
+                            <li><label class="ms-option"><input type="checkbox" name="products" value="Placemats &amp; Table Runners"> <span>Placemats &amp; Table Runners</span></label></li>
+                            <li><label class="ms-option"><input type="checkbox" name="products" value="Tote Bags"> <span>Tote Bags</span></label></li>
+                            <li><label class="ms-option"><input type="checkbox" name="products" value="Pouches"> <span>Pouches</span></label></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Q2: name -->
+                    <div class="form-field">
+                        <label class="form-label" for="notify-name">Please enter your name.</label>
+                        <input type="text" id="notify-name" name="name" autocomplete="name" placeholder="Your name">
+                    </div>
+
+                    <!-- Q3: email (required) -->
+                    <div class="form-field">
+                        <label class="form-label" for="notify-email">Please enter your email address to receive a notification when our products are available for sale. <span class="required" aria-hidden="true">*</span></label>
+                        <input type="email" id="notify-email" name="email" autocomplete="email" placeholder="you@example.com" required>
+                        <p class="form-error" id="email-error" hidden>Please enter a valid email address.</p>
+                    </div>
+
+                    <p class="form-note"><span class="required">*</span> Required</p>
+                    <button type="submit" class="cta-button form-submit">Submit</button>
+                    <p class="form-status" role="status" aria-live="polite" hidden></p>
+                </form>
+            </div>
+        </section>
+
         <!-- Closing -->
         <section class="story-section centered-section">
             <h2>A Little More Comfort, Every Day</h2>
@@ -143,7 +193,7 @@
                 <div class="product-image has-photo">
                     <picture>
                         <source srcset="assets/images/products/fitted-sheet.webp" type="image/webp">
-                        <img src="assets/images/products/fitted-sheet.jpg" alt="Printed cotton fitted sheet with pink florals and mustard paisley border" loading="lazy" width="1000" height="1053">
+                        <img src="assets/images/products/fitted-sheet.jpg" alt="Printed cotton fitted sheet with pink lilies and mustard booti in a trellis pattern" loading="lazy" width="949" height="1000">
                     </picture>
                 </div>
                 <div class="product-content">
@@ -160,7 +210,7 @@
                     <div class="product-footer">
                         <div class="price">$90 - $120</div>
                         <div class="product-cta-group">
-                            <a class="product-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSf6hh8w1TEEyVzm4fprW8r7gPs3QWSlclRMgjNfu2hNSsw5kA/viewform?usp=publish-editor" target="_blank" rel="noopener">Notify me</a>
+                            <a class="product-cta" href="#get-notified" onclick="goToNotify(event)">Notify Me</a>
                         </div>
                     </div>
                 </div>
@@ -171,7 +221,7 @@
                 <div class="product-image has-photo">
                     <picture>
                         <source srcset="assets/images/products/flat-sheets.webp" type="image/webp">
-                        <img src="assets/images/products/flat-sheets.jpg" alt="Printed cotton flat sheet with pink florals and mustard booti in a trellis pattern" loading="lazy" width="1000" height="833">
+                        <img src="assets/images/products/flat-sheets.jpg" alt="Printed cotton flat sheet with pink florals and a mustard paisley border" loading="lazy" width="949" height="1000">
                     </picture>
                 </div>
                 <div class="product-content">
@@ -187,7 +237,7 @@
                     <div class="product-footer">
                         <div class="price">$90 - $120</div>
                         <div class="product-cta-group">
-                            <a class="product-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSf6hh8w1TEEyVzm4fprW8r7gPs3QWSlclRMgjNfu2hNSsw5kA/viewform?usp=publish-editor" target="_blank" rel="noopener">Notify me</a>
+                            <a class="product-cta" href="#get-notified" onclick="goToNotify(event)">Notify Me</a>
                         </div>
                     </div>
                 </div>
@@ -217,7 +267,7 @@
                     <div class="product-footer">
                         <div class="price">$100 - $140</div>
                         <div class="product-cta-group">
-                            <a class="product-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSf6hh8w1TEEyVzm4fprW8r7gPs3QWSlclRMgjNfu2hNSsw5kA/viewform?usp=publish-editor" target="_blank" rel="noopener">Notify me</a>
+                            <a class="product-cta" href="#get-notified" onclick="goToNotify(event)">Notify Me</a>
                         </div>
                     </div>
                 </div>
@@ -245,7 +295,7 @@
                     <div class="product-footer">
                         <div class="price">$40 - $60</div>
                         <div class="product-cta-group">
-                            <a class="product-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSf6hh8w1TEEyVzm4fprW8r7gPs3QWSlclRMgjNfu2hNSsw5kA/viewform?usp=publish-editor" target="_blank" rel="noopener">Notify me</a>
+                            <a class="product-cta" href="#get-notified" onclick="goToNotify(event)">Notify Me</a>
                         </div>
                     </div>
                 </div>
@@ -274,7 +324,7 @@
                     <div class="product-footer">
                         <div class="price">$25 - $40</div>
                         <div class="product-cta-group">
-                            <a class="product-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSf6hh8w1TEEyVzm4fprW8r7gPs3QWSlclRMgjNfu2hNSsw5kA/viewform?usp=publish-editor" target="_blank" rel="noopener">Notify me</a>
+                            <a class="product-cta" href="#get-notified" onclick="goToNotify(event)">Notify Me</a>
                         </div>
                     </div>
                 </div>
@@ -295,7 +345,7 @@
                     <div class="product-footer">
                         <div class="price">$15 - $30</div>
                         <div class="product-cta-group">
-                            <a class="product-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSf6hh8w1TEEyVzm4fprW8r7gPs3QWSlclRMgjNfu2hNSsw5kA/viewform?usp=publish-editor" target="_blank" rel="noopener">Notify me</a>
+                            <a class="product-cta" href="#get-notified" onclick="goToNotify(event)">Notify Me</a>
                         </div>
                     </div>
                 </div>
@@ -316,7 +366,7 @@
                     <div class="product-footer">
                         <div class="price">$15 - $25</div>
                         <div class="product-cta-group">
-                            <a class="product-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSf6hh8w1TEEyVzm4fprW8r7gPs3QWSlclRMgjNfu2hNSsw5kA/viewform?usp=publish-editor" target="_blank" rel="noopener">Notify me</a>
+                            <a class="product-cta" href="#get-notified" onclick="goToNotify(event)">Notify Me</a>
                         </div>
                     </div>
                 </div>
@@ -338,7 +388,7 @@
                     <div class="product-footer">
                         <div class="price price-tbc">Price to be confirmed</div>
                         <div class="product-cta-group">
-                            <a class="product-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSf6hh8w1TEEyVzm4fprW8r7gPs3QWSlclRMgjNfu2hNSsw5kA/viewform?usp=publish-editor" target="_blank" rel="noopener">Notify me</a>
+                            <a class="product-cta" href="#get-notified" onclick="goToNotify(event)">Notify Me</a>
                         </div>
                     </div>
                 </div>
@@ -364,7 +414,7 @@
                     <div class="product-footer">
                         <div class="price">$30 - $40</div>
                         <div class="product-cta-group">
-                            <a class="product-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSf6hh8w1TEEyVzm4fprW8r7gPs3QWSlclRMgjNfu2hNSsw5kA/viewform?usp=publish-editor" target="_blank" rel="noopener">Notify me</a>
+                            <a class="product-cta" href="#get-notified" onclick="goToNotify(event)">Notify Me</a>
                         </div>
                     </div>
                 </div>
@@ -391,7 +441,7 @@
                     <div class="product-footer">
                         <div class="price">$40 - $60</div>
                         <div class="product-cta-group">
-                            <a class="product-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSf6hh8w1TEEyVzm4fprW8r7gPs3QWSlclRMgjNfu2hNSsw5kA/viewform?usp=publish-editor" target="_blank" rel="noopener">Notify me</a>
+                            <a class="product-cta" href="#get-notified" onclick="goToNotify(event)">Notify Me</a>
                         </div>
                     </div>
                 </div>
@@ -417,7 +467,7 @@
                     <div class="product-footer">
                         <div class="price">$30 - $40</div>
                         <div class="product-cta-group">
-                            <a class="product-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSf6hh8w1TEEyVzm4fprW8r7gPs3QWSlclRMgjNfu2hNSsw5kA/viewform?usp=publish-editor" target="_blank" rel="noopener">Notify me</a>
+                            <a class="product-cta" href="#get-notified" onclick="goToNotify(event)">Notify Me</a>
                         </div>
                     </div>
                 </div>
@@ -443,7 +493,7 @@
                     <div class="product-footer">
                         <div class="price">$20 - $30</div>
                         <div class="product-cta-group">
-                            <a class="product-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSf6hh8w1TEEyVzm4fprW8r7gPs3QWSlclRMgjNfu2hNSsw5kA/viewform?usp=publish-editor" target="_blank" rel="noopener">Notify me</a>
+                            <a class="product-cta" href="#get-notified" onclick="goToNotify(event)">Notify Me</a>
                         </div>
                     </div>
                 </div>
@@ -490,7 +540,7 @@
             <p style="color: white; max-width: 600px; margin-bottom: 10px;">A favourite print, a softer bed, a little colour for your table — sometimes it's the smallest details that make a space feel more like home.</p>
             <p style="color: white; max-width: 600px; margin-bottom: 30px;">We hope you find something here that feels just right for yours.</p>
             <p style="margin-bottom: 20px;"><a href="#products" class="text-link text-link-light">Explore The Collection →</a></p>
-            <a class="cta-button" href="https://thepinkeditcanada.etsy.com" target="_blank" rel="noopener">Shop on Etsy</a>
+            <button class="cta-button" onclick="alert('https://thepinkeditcanada.etsy.com (Coming Soon)')">Shop on Etsy</button>
             <button class="cta-button" onclick="alert('https://www.amazon.ca/thepinkedit (Coming Soon)')">Shop on Amazon</button>
             <a class="cta-button" href="mailto:thepinkeditca@gmail.com">Contact Us</a>
         </section>
@@ -511,5 +561,6 @@
     </div>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/notify-form.js"></script>
 </body>
 </html>

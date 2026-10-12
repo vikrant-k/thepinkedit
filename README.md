@@ -45,3 +45,14 @@ python3 -m http.server 8000
 - The hero section references `The_Pink_Edit_Hero_Background.svg` as a background. That file wasn't in the original upload — add it to the repo root, or remove the `background: url(...)` from the `.hero` section in `index.html`.
 - **Add a product photo:** drop `name.webp` + `name.jpg` into `assets/images/products/` and replace that card's emoji `<div class="product-image">` with a `has-photo` block copied from another card.
   Bath Robes still uses an emoji placeholder.
+
+## Connect the Get Notified form
+
+The form on the Home page sends answers to your Google Form. It needs the form's three entry IDs:
+
+1. Open the Google Form (edit view) → **⋮** menu → **Get pre-filled link**.
+2. Tick any product, type any name and email, then click **Get link** → **Copy link**.
+3. The link contains three `entry.123456789=` parts — one per question.
+4. Paste them into `assets/js/notify-form.js` under `entries` (products, name, email).
+
+Make sure the Google Form isn't restricted to signed-in users (Settings → Responses), or submissions will be rejected.

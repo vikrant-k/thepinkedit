@@ -45,3 +45,12 @@ showPage('home');
     window.addEventListener('resize', setNavHeight);
     window.addEventListener('load', setNavHeight);
 })();
+
+// "Notify Me" buttons: go to the Home page and scroll to the Get Notified form
+function goToNotify(event) {
+    if (event) event.preventDefault();
+    showPage('home');
+    const target = document.getElementById('get-notified');
+    if (!target) return;
+    requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+}

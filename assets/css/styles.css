@@ -869,3 +869,31 @@ a.cta-button {
     white-space: nowrap;
     border: 0;
 }
+
+/* ---------- Added: full-height hero animation restored (1536 × 546) ---------- */
+.hero-image-strip {
+    aspect-ratio: 1536 / 546;
+}
+
+/* ---------- Added: "The Pink Edit" next to the nav logo (computers only) ---------- */
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--dusty-pink);
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .logo-text {
+        display: none;
+    }
+}

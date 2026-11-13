@@ -36,6 +36,15 @@
         @media (prefers-reduced-motion: reduce) {
             #home .hero-carousel__slide { transition: none; }
         }
+
+        /* Craft story image: responsive, retaining the full panoramic composition */
+        #home .craft-section__image {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 32px auto 0;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -94,6 +103,7 @@
             <p>Over the years, Jaipur's textile industry has evolved, embracing techniques such as hand screen printing alongside traditional block printing. Both continue to play an important role in the region's rich textile heritage.</p>
             <p>At The Pink Edit, we celebrate these traditions through a carefully curated collection that brings together beautiful prints, soft cotton fabrics, and designs that feel at home in contemporary spaces.</p>
             <p class="text-link-wrap" hidden><a href="#" class="text-link">Discover the Art Behind Our Prints →</a></p>
+            <img class="craft-section__image" src="assets/images/craft/traditional-block-printing.webp" alt="Three scenes of Jaipur hand block printing: a wooden block dipped in pigment, fabric being printed by hand, and finished cotton textiles drying outdoors" width="2048" height="682" loading="lazy" decoding="async">
         </section>
 
         <!-- Explore the Collection -->

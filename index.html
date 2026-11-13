@@ -10,6 +10,33 @@
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/brand/favicon-192.png">
     <link rel="apple-touch-icon" href="assets/images/brand/apple-touch-icon.png">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Sitewide dusty pink override */
+        :root { --dusty-pink: #B98787; }
+
+        /* Four-image homepage carousel: 2048 × 728 originals */
+        #home .hero-carousel {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 2048 / 728;
+            overflow: hidden;
+            background-color: #B98787;
+        }
+        #home .hero-carousel__slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 450ms ease-in-out;
+        }
+        #home .hero-carousel__slide.is-active { opacity: 1; }
+        @media (prefers-reduced-motion: reduce) {
+            #home .hero-carousel__slide { transition: none; }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -28,12 +55,12 @@
 
     <!-- PAGE 1: LANDING -->
     <div class="page active" id="home">
-        <!-- Hero Image Strip: looping animation (converted from GIF to video for fast loading) -->
-        <section class="hero-image-strip">
-            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/images/hero/arches-poster.jpg" aria-label="Animated ivory floral motifs framed in arches on a soft blush ground">
-                <source src="assets/images/hero/arches-animated.webm" type="video/webm">
-                <source src="assets/images/hero/arches-animated.mp4" type="video/mp4">
-            </video>
+        <!-- Homepage image carousel: Hero 1 → Hero 2 → Hero 3 → Hero 4, 2 seconds each -->
+        <section class="hero-carousel" aria-label="The Pink Edit textile collection slideshow">
+            <img class="hero-carousel__slide is-active" src="assets/images/hero/hero-1.webp" alt="Artisan hand block printing floral cotton textiles in a sunlit Jaipur-inspired setting" width="2048" height="728" fetchpriority="high">
+            <img class="hero-carousel__slide" src="assets/images/hero/hero-2.webp" alt="Folded floral waffle cotton towels with printed borders" width="2048" height="728" loading="eager">
+            <img class="hero-carousel__slide" src="assets/images/hero/hero-3.webp" alt="Floral cotton dohar draped over a cane chair" width="2048" height="728" loading="eager">
+            <img class="hero-carousel__slide" src="assets/images/hero/hero-4.webp" alt="Coordinating printed cotton textiles styled on a Jaipur courtyard daybed" width="2048" height="728" loading="eager">
         </section>
 
         <!-- Hero -->
@@ -532,6 +559,7 @@
     </div>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/hero-carousel.js" defer></script>
 
 </body>
 </html>

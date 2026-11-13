@@ -11,9 +11,16 @@
     <link rel="apple-touch-icon" href="assets/images/brand/apple-touch-icon.png">
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
+        /* Current logo, 50% larger than the former 400px image */
+        #home .hero-logo { display: block; width: 600px; max-width: 90vw; height: auto; }
+        #home .hero-logo img { display: block; width: 100%; height: auto; }
+        /* Footer icon refinements */
+        .social-links .social-instagram-icon { width: 18px; height: 18px; }
+        .social-links a.social-etsy { font-family: "Times New Roman", Times, serif; font-size: 1.2em; }
+        .social-links a.social-facebook, .social-links a.social-email { font-size: 1.2em; }
         /* Sitewide dusty pink override */
         :root { --dusty-pink: #B98787; }
-        .social-links .social-instagram-icon { display: inline-block; vertical-align: middle; width: 24px; height: 24px; }
+        .social-links .social-instagram-icon { display: inline-block; vertical-align: middle; width: 18px; height: 18px; }
 
 
         /* Four-image homepage carousel: 2048 × 728 originals */
@@ -78,7 +85,7 @@
         <section class="hero" style="background: url('The_Pink_Edit_Hero_Background.svg') center/cover no-repeat; background-size: cover; min-height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
             <picture class="hero-logo">
                 <source srcset="assets/images/brand/logo-arch.webp" type="image/webp">
-                <img src="assets/images/brand/logo-arch.png" alt="The Pink Edit logo" width="400" height="400" style="max-width: 100%; height: auto;">
+                <img src="assets/images/brand/logo-arch.png" alt="The Pink Edit logo" width="600" height="600" style="width: 600px; max-width: 90vw; height: auto;">
             </picture>
             <h1 class="visually-hidden">The Pink Edit</h1>
             <div class="tagline">For slower mornings and softer moments.</div>
@@ -161,12 +168,12 @@
                 <div class="footer-tagline">Block-printed. Honestly sourced. Made for real living.</div>
                 <p>© 2026 The Pink Edit | Importing premium textiles from Jaipur to Canada</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61595724030541" title="Facebook" target="_blank" rel="noopener noreferrer">f</a>
+                    <a class="social-facebook" href="https://www.facebook.com/profile.php?id=61595724030541" title="Facebook" target="_blank" rel="noopener noreferrer">f</a>
                     <a href="https://www.instagram.com/thepinkeditca?utm_source=ig_web_button_share_sheet&amp;stkn=ZDNlZDc0MzIxNw==" title="Instagram" target="_blank" rel="noopener"><svg class="social-instagram-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"></circle></svg></a>
-                    <a href="mailto:thepinkeditca@gmail.com" title="Email">✉</a>
-                    <a href="https://www.etsy.com/ca/shop/ThePinkEditCanada" title="Shop The Pink Edit on Etsy" target="_blank" rel="noopener noreferrer">Etsy</a>
+                    <a class="social-email" href="mailto:thepinkeditca@gmail.com" title="Email">✉</a>
+                    <a href="https://www.etsy.com/ca/shop/ThePinkEditCanada" title="Shop The Pink Edit on Etsy" target="_blank" rel="noopener noreferrer" class="social-etsy" aria-label="Etsy shop">E</a>
                 </div>
-                <p style="margin-top: 20px; font-size: 12px;">Available on Etsy &amp; Amazon</p>
+                <p style="margin-top: 20px; font-size: 12px;">Available on Etsy now</p>
             </div>
         </footer>
     </div>
@@ -552,7 +559,7 @@
             <p style="color: white; max-width: 600px; margin-bottom: 30px;">We hope you find something here that feels just right for yours.</p>
             <p style="margin-bottom: 20px;"><a href="#products" class="text-link text-link-light">Explore The Collection →</a></p>
             <a class="cta-button" href="https://www.etsy.com/ca/shop/ThePinkEditCanada" target="_blank" rel="noopener noreferrer">Shop on Etsy</a>
-            <button class="cta-button" onclick="alert('https://www.amazon.ca/thepinkedit (Coming Soon)')">Shop on Amazon</button>
+            <button class="cta-button" onclick="alert('https://www.amazon.ca/thepinkedit (Coming Soon)')">Shop on Amazon (Coming Soon)</button>
             <a class="cta-button" href="mailto:thepinkeditca@gmail.com">Contact Us</a>
         </section>
 
@@ -562,10 +569,10 @@
                 <div class="footer-tagline">Block-printed. Honestly sourced. Made for real living.</div>
                 <p>© 2026 The Pink Edit | Importing premium textiles from Jaipur, Rajasthan to Canada</p>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61595724030541" title="Facebook" target="_blank" rel="noopener noreferrer">f</a>
+                    <a class="social-facebook" href="https://www.facebook.com/profile.php?id=61595724030541" title="Facebook" target="_blank" rel="noopener noreferrer">f</a>
                     <a href="https://www.instagram.com/thepinkeditca?utm_source=ig_web_button_share_sheet&amp;stkn=ZDNlZDc0MzIxNw==" title="Instagram" target="_blank" rel="noopener"><svg class="social-instagram-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"></circle></svg></a>
-                    <a href="mailto:thepinkeditca@gmail.com" title="Email">✉</a>
-                    <a href="https://www.etsy.com/ca/shop/ThePinkEditCanada" title="Shop The Pink Edit on Etsy" target="_blank" rel="noopener noreferrer">Etsy</a>
+                    <a class="social-email" href="mailto:thepinkeditca@gmail.com" title="Email">✉</a>
+                    <a href="https://www.etsy.com/ca/shop/ThePinkEditCanada" title="Shop The Pink Edit on Etsy" target="_blank" rel="noopener noreferrer" class="social-etsy" aria-label="Etsy shop">E</a>
                 </div>
                 <p style="margin-top: 20px; font-size: 12px;">Follow us on Instagram @thepinkeditca | Email: thepinkeditca@gmail.com</p>
             </div>

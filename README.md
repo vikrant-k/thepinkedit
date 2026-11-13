@@ -41,3 +41,13 @@ This is a **consolidated update package**, not a full independent mirror of your
 - Instagram now uses a camera-outline SVG; Etsy added to both footers.
 
 **Important:** The original CSS, `assets/js/main.js`, product photography and other brand assets were not supplied; retain them in your existing repository. Extract this ZIP into the repository, overwriting matching files.
+
+## November 2026 logo and footer update
+- Updated both `assets/images/brand/logo-arch.png` and `.webp` from the newly supplied cream logo.
+- Increased homepage logo display from 400 px to 600 px (responsive max-width 90vw).
+- Set Instagram camera icon to 18 px (from 24 px).
+- Social footer: Etsy now displays an E in Times New Roman; Etsy/Facebook/email text/icons enlarged by 20%.
+- Homepage copy now says “Available on Etsy now”; Amazon button explicitly says “Shop on Amazon (Coming Soon)”.
+- Earlier changes (3-second carousel, reordered products, pricing, links, craft image) preserved.
+
+This archive is a repository update overlay, not a complete independent site. Keep the original assets/css/styles.css, assets/js/main.js, and product photos from the existing repository.

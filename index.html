@@ -13,6 +13,8 @@
     <style>
         /* Sitewide dusty pink override */
         :root { --dusty-pink: #B98787; }
+        .social-links .social-instagram-icon { display: inline-block; vertical-align: middle; width: 24px; height: 24px; }
+
 
         /* Four-image homepage carousel: 2048 × 728 originals */
         #home .hero-carousel {
@@ -76,7 +78,7 @@
         <section class="hero" style="background: url('The_Pink_Edit_Hero_Background.svg') center/cover no-repeat; background-size: cover; min-height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;">
             <picture class="hero-logo">
                 <source srcset="assets/images/brand/logo-arch.webp" type="image/webp">
-                <img src="assets/images/brand/logo-arch.png" alt="The Pink Edit logo" width="353" height="400">
+                <img src="assets/images/brand/logo-arch.png" alt="The Pink Edit logo" width="400" height="400" style="max-width: 100%; height: auto;">
             </picture>
             <h1 class="visually-hidden">The Pink Edit</h1>
             <div class="tagline">For slower mornings and softer moments.</div>
@@ -160,8 +162,9 @@
                 <p>© 2026 The Pink Edit | Importing premium textiles from Jaipur to Canada</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61595724030541" title="Facebook" target="_blank" rel="noopener noreferrer">f</a>
-                    <a href="https://www.instagram.com/thepinkeditca?utm_source=ig_web_button_share_sheet&amp;stkn=ZDNlZDc0MzIxNw==" title="Instagram" target="_blank" rel="noopener">@</a>
+                    <a href="https://www.instagram.com/thepinkeditca?utm_source=ig_web_button_share_sheet&amp;stkn=ZDNlZDc0MzIxNw==" title="Instagram" target="_blank" rel="noopener"><svg class="social-instagram-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"></circle></svg></a>
                     <a href="mailto:thepinkeditca@gmail.com" title="Email">✉</a>
+                    <a href="https://www.etsy.com/ca/shop/ThePinkEditCanada" title="Shop The Pink Edit on Etsy" target="_blank" rel="noopener noreferrer">Etsy</a>
                 </div>
                 <p style="margin-top: 20px; font-size: 12px;">Available on Etsy &amp; Amazon</p>
             </div>
@@ -180,62 +183,7 @@
 
         <!-- Products Grid -->
         <section class="products-grid" id="products">
-            <!-- Product 1: Fitted Sheets -->
-            <div class="product-card">
-                <div class="product-image has-photo">
-                    <picture>
-                        <source srcset="assets/images/products/fitted-sheet.webp" type="image/webp">
-                        <img src="assets/images/products/fitted-sheet.jpg" alt="Printed cotton fitted sheet with pink lilies and mustard booti in a trellis pattern" loading="lazy" width="949" height="1000">
-                    </picture>
-                </div>
-                <div class="product-content">
-                    <h3>Fitted Sheets</h3>
-                    <p>Soft, breathable cotton with delicate prints and beautifully considered borders. Our fitted sheets bring a quiet touch of colour and elegance to the bedroom, with the comfort of cotton for everyday living.</p>
-                    <div class="product-specs">
-                        <p><strong>Material:</strong> 100% cotton</p>
-                        <p><strong>Size:</strong> 60" × 80" × 12" (152 × 203 × 30 cm)</p>
-                        <p><strong>Includes:</strong> 1 fitted sheet + 2 pillowcases</p>
-                        <p><strong>Printing:</strong> Hand block or hand screen printed, depending on design</p>
-                        <p><strong>Fit:</strong> Elasticated fitted sheet</p>
-                    </div>
-                    <p class="product-quote">“For the simple pleasure of a freshly made bed.”</p>
-                    <div class="product-footer">
-                        <div class="price">$90 - $120</div>
-                        <div class="product-cta-group">
-                            <a class="product-cta" href="https://www.etsy.com/ca/shop/ThePinkEditCanada" target="_blank" rel="noopener noreferrer">Notify Me</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 2: Flat Sheets -->
-            <div class="product-card">
-                <div class="product-image has-photo">
-                    <picture>
-                        <source srcset="assets/images/products/flat-sheets.webp" type="image/webp">
-                        <img src="assets/images/products/flat-sheets.jpg" alt="Printed cotton flat sheet with pink florals and a mustard paisley border" loading="lazy" width="949" height="1000">
-                    </picture>
-                </div>
-                <div class="product-content">
-                    <h3>Flat Sheets</h3>
-                    <p>Beautifully printed cotton sheets that are soft, breathable, and easy to live with. From delicate florals to thoughtfully placed borders, our flat sheets bring a relaxed elegance to the bedroom.</p>
-                    <div class="product-specs">
-                        <p><strong>Material:</strong> 100% cotton</p>
-                        <p><strong>Size:</strong> 90" × 102" (229 × 259 cm)</p>
-                        <p><strong>Includes:</strong> 1 flat sheet + 2 pillowcases</p>
-                        <p><strong>Printing:</strong> Hand block or hand screen printed, depending on design</p>
-                    </div>
-                    <p class="product-quote">“Soft layers, slower mornings, and a bed worth lingering in.”</p>
-                    <div class="product-footer">
-                        <div class="price">$85 - $115</div>
-                        <div class="product-cta-group">
-                            <a class="product-cta" href="https://www.etsy.com/ca/shop/ThePinkEditCanada" target="_blank" rel="noopener noreferrer">Notify Me</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 3: Large Dohars - Lightweight Cotton Quilts -->
+            <!-- Product 1: Large Dohars - Lightweight Cotton Quilts -->
             <div class="product-card">
                 <div class="product-image has-photo">
                     <picture>
@@ -264,7 +212,7 @@
                 </div>
             </div>
 
-            <!-- Product 4: Small Dohars Set of 2 - Lightweight Cotton Quilts -->
+            <!-- Product 2: Small Dohars Set of 2 - Lightweight Cotton Quilts -->
             <div class="product-card">
                 <div class="product-image has-photo">
                     <picture>
@@ -293,7 +241,7 @@
                 </div>
             </div>
 
-            <!-- Product 5: Kids' Dohars - Lightweight Cotton Quilts -->
+            <!-- Product 3: Kids' Dohars - Lightweight Cotton Quilts -->
             <div class="product-card">
                 <div class="product-image has-photo">
                     <picture>
@@ -314,6 +262,61 @@
                     <p class="product-quote">“Little comforts for little dreamers.”</p>
                     <div class="product-footer">
                         <div class="price">$50 - $70</div>
+                        <div class="product-cta-group">
+                            <a class="product-cta" href="https://www.etsy.com/ca/shop/ThePinkEditCanada" target="_blank" rel="noopener noreferrer">Notify Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4: Fitted Sheets -->
+            <div class="product-card">
+                <div class="product-image has-photo">
+                    <picture>
+                        <source srcset="assets/images/products/fitted-sheet.webp" type="image/webp">
+                        <img src="assets/images/products/fitted-sheet.jpg" alt="Printed cotton fitted sheet with pink lilies and mustard booti in a trellis pattern" loading="lazy" width="949" height="1000">
+                    </picture>
+                </div>
+                <div class="product-content">
+                    <h3>Fitted Sheets</h3>
+                    <p>Soft, breathable cotton with delicate prints and beautifully considered borders. Our fitted sheets bring a quiet touch of colour and elegance to the bedroom, with the comfort of cotton for everyday living.</p>
+                    <div class="product-specs">
+                        <p><strong>Material:</strong> 100% cotton</p>
+                        <p><strong>Size:</strong> 60" × 80" × 12" (152 × 203 × 30 cm)</p>
+                        <p><strong>Includes:</strong> 1 fitted sheet + 2 pillowcases</p>
+                        <p><strong>Printing:</strong> Hand block or hand screen printed, depending on design</p>
+                        <p><strong>Fit:</strong> Elasticated fitted sheet</p>
+                    </div>
+                    <p class="product-quote">“For the simple pleasure of a freshly made bed.”</p>
+                    <div class="product-footer">
+                        <div class="price">$90 - $120</div>
+                        <div class="product-cta-group">
+                            <a class="product-cta" href="https://www.etsy.com/ca/shop/ThePinkEditCanada" target="_blank" rel="noopener noreferrer">Notify Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5: Flat Sheets -->
+            <div class="product-card">
+                <div class="product-image has-photo">
+                    <picture>
+                        <source srcset="assets/images/products/flat-sheets.webp" type="image/webp">
+                        <img src="assets/images/products/flat-sheets.jpg" alt="Printed cotton flat sheet with pink florals and a mustard paisley border" loading="lazy" width="949" height="1000">
+                    </picture>
+                </div>
+                <div class="product-content">
+                    <h3>Flat Sheets</h3>
+                    <p>Beautifully printed cotton sheets that are soft, breathable, and easy to live with. From delicate florals to thoughtfully placed borders, our flat sheets bring a relaxed elegance to the bedroom.</p>
+                    <div class="product-specs">
+                        <p><strong>Material:</strong> 100% cotton</p>
+                        <p><strong>Size:</strong> 90" × 102" (229 × 259 cm)</p>
+                        <p><strong>Includes:</strong> 1 flat sheet + 2 pillowcases</p>
+                        <p><strong>Printing:</strong> Hand block or hand screen printed, depending on design</p>
+                    </div>
+                    <p class="product-quote">“Soft layers, slower mornings, and a bed worth lingering in.”</p>
+                    <div class="product-footer">
+                        <div class="price">$85 - $115</div>
                         <div class="product-cta-group">
                             <a class="product-cta" href="https://www.etsy.com/ca/shop/ThePinkEditCanada" target="_blank" rel="noopener noreferrer">Notify Me</a>
                         </div>
@@ -560,8 +563,9 @@
                 <p>© 2026 The Pink Edit | Importing premium textiles from Jaipur, Rajasthan to Canada</p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61595724030541" title="Facebook" target="_blank" rel="noopener noreferrer">f</a>
-                    <a href="https://www.instagram.com/thepinkeditca?utm_source=ig_web_button_share_sheet&amp;stkn=ZDNlZDc0MzIxNw==" title="Instagram" target="_blank" rel="noopener">@</a>
+                    <a href="https://www.instagram.com/thepinkeditca?utm_source=ig_web_button_share_sheet&amp;stkn=ZDNlZDc0MzIxNw==" title="Instagram" target="_blank" rel="noopener"><svg class="social-instagram-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"></circle></svg></a>
                     <a href="mailto:thepinkeditca@gmail.com" title="Email">✉</a>
+                    <a href="https://www.etsy.com/ca/shop/ThePinkEditCanada" title="Shop The Pink Edit on Etsy" target="_blank" rel="noopener noreferrer">Etsy</a>
                 </div>
                 <p style="margin-top: 20px; font-size: 12px;">Follow us on Instagram @thepinkeditca | Email: thepinkeditca@gmail.com</p>
             </div>

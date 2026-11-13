@@ -1,58 +1,43 @@
-# The Pink Edit — Landing Page
+# The Pink Edit — Consolidated GitHub Update
 
-Static landing page for **The Pink Edit** — block-printed, 100% cotton textiles from Jaipur, Rajasthan, for Canadian homes.
+This package combines **all available uploaded files and latest website updates** into their proper repository paths.
 
-Plain HTML, CSS and vanilla JS. No build step.
+## Important: retain these files from your existing GitHub repository
 
-## Structure
+The following original files were **not uploaded to this conversation** and are therefore **not included** in this archive:
 
-```
-the-pink-edit/
-├── index.html                  # Page markup
-├── favicon.ico                 # Lotus favicon (16/32/48)
-├── assets/
-│   ├── css/styles.css          # All styles (tokens at the top)
-│   ├── js/main.js              # Page switching + hero slideshow
-│   └── images/
-│       ├── brand/              # Lotus mark, favicons
-│       ├── hero/               # Hero animation (MP4/WebM) + poster
-│       └── products/           # Product photos (.webp + .jpg fallback)
-├── .github/workflows/pages.yml # Auto-deploy to GitHub Pages
-├── .nojekyll
-└── README.md
-```
+- `assets/css/styles.css` (original site styling)
+- `assets/js/main.js` (Home / Collection navigation)
+- `assets/images/brand/` (logos and brand icons)
+- `assets/images/products/` (product photos)
+- `The_Pink_Edit_Hero_Background.svg` (background referenced by the home hero)
+- Any other existing repository assets/workflows that were not provided
 
-## Run locally
+**Do not delete those files.** Upload/merge this archive into your existing repository rather than replacing the whole repository or deleting existing folders. Uploading the archive's files preserves the original design and product images.
 
-Open `index.html` in a browser, or serve the folder:
+## Included changes
 
-```bash
-python3 -m http.server 8000
-# → http://localhost:8000
-```
+1. Removed home notification signup section.
+2. All Notify Me and Shop on Etsy links point to https://www.etsy.com/ca/shop/ThePinkEditCanada.
+3. Facebook links point to https://www.facebook.com/profile.php?id=61595724030541.
+4. Updated prices and sizes for all 12 catalogue categories.
+5. Dusty-pink custom property overridden to `#B98787` in `index.html`.
+6. Four-image homepage carousel (hero-1 through hero-4) automatically advances every 2 seconds.
+7. Added the craft-process panoramic photo to the end of the craft section.
 
-## Deploy on GitHub Pages
+## Deploy
 
-1. Create a repo and push this folder's contents to the `main` branch.
-2. In the repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. Every push to `main` redeploys via `.github/workflows/pages.yml`.
+1. Extract this ZIP.
+2. Copy its contents into the **existing GitHub repository** at the same relative paths. Overwrite `index.html`; add the new slideshow script and images.
+3. Keep all existing repository files not included in this package.
+4. Commit/push to the branch configured for GitHub Pages.
 
-**Custom domain:** add a `CNAME` file at the root containing `www.thepinkedit.ca`, then point your DNS to GitHub Pages.
+This is a **consolidated update package**, not a full independent mirror of your original repository, since the original CSS, JavaScript and product image assets were not provided.
 
-## Notes
+## November 13 update
 
-- The page has two views (Home / Collection) switched by `showPage()` in `assets/js/main.js`.
-- The hero section references `The_Pink_Edit_Hero_Background.svg` as a background. That file wasn't in the original upload — add it to the repo root, or remove the `background: url(...)` from the `.hero` section in `index.html`.
-- **Add a product photo:** drop `name.webp` + `name.jpg` into `assets/images/products/` and replace that card's emoji `<div class="product-image">` with a `has-photo` block copied from another card.
-  Bath Robes still uses an emoji placeholder.
+- Carousel shows each Hero image for 3 seconds.
+- Collection order: Large Dohars, Small Dohars, Kids’ Dohars, Fitted Sheets, Flat Sheets, then remaining products.
+- Instagram now uses a camera-outline SVG; Etsy added to both footers.
 
-## Connect the Get Notified form
-
-The form on the Home page sends answers to your Google Form. It needs the form's three entry IDs:
-
-1. Open the Google Form (edit view) → **⋮** menu → **Get pre-filled link**.
-2. Tick any product, type any name and email, then click **Get link** → **Copy link**.
-3. The link contains three `entry.123456789=` parts — one per question.
-4. Paste them into `assets/js/notify-form.js` under `entries` (products, name, email).
-
-Make sure the Google Form isn't restricted to signed-in users (Settings → Responses), or submissions will be rejected.
+**Important:** The original CSS, `assets/js/main.js`, product photography and other brand assets were not supplied; retain them in your existing repository. Extract this ZIP into the repository, overwriting matching files.

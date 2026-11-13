@@ -1,4 +1,4 @@
-// Homepage hero slideshow: show each image for 2 seconds, in numbered order.
+// Homepage hero slideshow: show each image for 3 seconds, in numbered order.
 (() => {
     const carousel = document.querySelector('#home .hero-carousel');
     if (!carousel) return;
@@ -14,6 +14,6 @@
 
     // Respect users who request reduced motion: the first image stays visible.
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        window.setInterval(showNext, 2000);
+        window.setInterval(showNext, 3000);
     }
 })();
